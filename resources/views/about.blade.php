@@ -5,7 +5,7 @@
 @endsection
 
 @section("content")
-    <section>
-        About us will show here
-    </section>
+    <x-hero>
+        <h1>Hello About</h1>
+    </x-hero>
 @endsection

@@ -25,11 +25,16 @@
                 </nav>
             </div>
         </header>
-        <main class="w-full min-h-screen pt-[65px] flex flex-col items-center gap-4">
-            @yield("content");
+        <main class="w-full min-h-screen pt-[65px] flex flex-col items-center gap-4 mb-4">
+            @yield("content")
         </main>
-        <footer>
-            Usman Lubis
+        <footer  class="w-full">
+            <div class="max-w-[1440px] mx-auto p-4">
+                Usman Lubis
+            </div>
+            <!-- <div class="w-full max-w-[1440px]">
+                Usman Lubis
+            </div> -->
         </footer>
     </body>
 </html>
