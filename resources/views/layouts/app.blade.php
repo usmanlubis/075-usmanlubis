@@ -34,7 +34,7 @@
                     <h3 class="text-xl font-semibold">Navigations</h3>
                     <ul>
                         <li><a href="/" class="hover:opacity-90 active:opacity-85">Home</a></li>
-                        <li><a href="/rent" class="hover:opacity-90 active:opacity-85">Rent Car</a></li>
+                        <li><a href="/cars" class="hover:opacity-90 active:opacity-85">Rent Car</a></li>
                         <li><a href="/transaction" class="hover:opacity-90 active:opacity-85">My Transaction</a></li>
                         <li><a href="/about" class="hover:opacity-90 active:opacity-85">About Us</a></li>
                         <li><a href="/contact" class="hover:opacity-90 active:opacity-85">Contact</a></li>
