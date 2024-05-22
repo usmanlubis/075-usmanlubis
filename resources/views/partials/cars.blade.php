@@ -1,4 +1,4 @@
-<section class="w-full max-w-[1440px] px-4">
+<section class="w-full max-w-[1440px] p-4">
     <h1 id="rent-now" class="{{ request()->is('/') ? 'pt-[70px]' : '' }} text-center font-bold text-3xl pb-[25px]">Rent Car</h1>
     <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         @foreach($cars as $car)

@@ -26,6 +26,12 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+.social-icons svg {
+  width: 25px;
+  height: 25px;
+  fill: #000;
+}
+
 @media screen and (max-width: 1080px) {
   .hero-section {
     background-position: (0 50%);
