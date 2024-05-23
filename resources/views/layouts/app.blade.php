@@ -30,7 +30,7 @@
             @yield("content")
         </main>
         <footer  class="w-full">
-            <div class="flex justify-center gap-6 w-full max-w-[1440px] mx-auto p-4 bg-[#c5c5c5]">
+            <div class="flex justify-center gap-16 w-full max-w-[1440px] mx-auto p-4 bg-[#c5c5c5]">
                 <div class="flex flex-col gap-2">
                     <h3 class="text-xl font-semibold">Navigations</h3>
                     <ul>
