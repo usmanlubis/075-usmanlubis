@@ -197,26 +197,19 @@ use App\Http\Controllers\UserController;
 //     ],
 // ];
 
-Route::get('/', [CarController::class, "index"])->name("homepage");
-
-Route::get('/cars', [CarController::class, "show"])->name("cars");
-
-Route::get('/car/{id}', [CarController::class, "detail"])->name("car-detail");
-
-Route::get('/edit/{id}', [CarController::class, "edit"])->name("car.edit");
-
-Route::get('/delete/{id}', [CarController::class, "delete"])->name("car.delete");
-
-Route::get('/add', [CarController::class, "add"])->name('add');
-
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+Route::controller(CarController::class)->group(function() {
+    Route::get('/', "index")->name("homepage");
+    Route::get('/cars', "show")->name("cars");
+    Route::get('/car/{id}', "detail")->name("car-detail");
+    Route::get('/add', "add")->name('add');
+    Route::get('/edit/{id}', "edit")->name("car.edit");
+    Route::get('/delete/{id}', "delete")->name("car.delete");
+});
 
 Route::get('/transaction', [TransactionController::class, "index"])->name("transaction");
 
 Route::get('login', [UserController::class, "index"])->name('login');
+
+Route::view('/about', 'about')->name('about');
+
+Route::view('/contact', 'contact')->name('contact');
