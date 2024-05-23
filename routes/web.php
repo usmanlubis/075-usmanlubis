@@ -994,6 +994,10 @@ Route::get('/edit/{id}', function (int $id) {
     ]);
 })->name('car.edit');
 
+Route::get('/add', function () {
+    return view('add');
+})->name('add');
+
 Route::get('/about', function () {
     return view('about');
 })->name('about');
