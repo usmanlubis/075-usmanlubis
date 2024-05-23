@@ -14,6 +14,7 @@
       <div class="w-[50%] flex flex-col gap-4">
         <p class="font-bold">{{ $car['name'] }} ({{ $car['year'] }})</p>
         <p>Rp. {{ number_format($car['price'], 0, ',', '.') }}/day</p>
+        <p id="car-price" class="hidden">{{ $car['price'] }}</p>
         <p class="text-justify">{{ $car['description'] }}</p>
         <form action="" class="flex flex-col gap-2">
           <div class="flex flex-col gap-1">
@@ -25,7 +26,7 @@
             <input type="date" name="return" id="return" class="input w-full p-1 rounded-md focus:outline-2 focus:outline-erentGreen" required>
           </div>
           <div>
-            <p class="mt-4 font-bold text-xl">Total price: </p>
+            <p class="mt-4 font-bold text-xl">Total price: <span id="total-price">0</span></p>
           </div>
           <div>
             @if ($car['isAvailable'])
