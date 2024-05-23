@@ -11,6 +11,7 @@ export default {
         erentYellow: "#F8B32A",
         erentGreen: "#146C43",
         erentBlack: "#13100D",
+        erentRed: "#d90429",
       },
     },
   },
