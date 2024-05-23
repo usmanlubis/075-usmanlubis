@@ -3,14 +3,14 @@
   <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Login eRent</title>
+      <title>Log In eRent</title>
       @vite('resources/css/app.css')
   </head>
 <body>
   <main class="login w-full h-screen flex justify-center items-center p-4 border-2 border-black">
     <div class="flex flex-col gap-3 w-full max-w-[450px] border-2 p-4 shadow-lg rounded-lg">
       <img src="{{ asset('images/logo.png') }}" alt="eRent Logo" class="h-[80px] mx-auto">
-      <h1 class="text-3xl text-center font-bold text-black/90 mt-8">Login</h1>
+      <h1 class="text-3xl text-center font-bold text-black/90 mt-8">Log In</h1>
       <form action="" class="flex flex-col gap-4">
         <div class="flex flex-col gap-1">
           <label for="email">Email</label>
