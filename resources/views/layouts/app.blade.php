@@ -14,16 +14,22 @@
                         <img src="{{ asset('images/logo.png') }}" alt="eRent logo" class="h-[40px]">
                     </a>
                 </div>
-                <nav>
-                    <ul class="flex justify-end gap-3 text-lg">
-                        <li><a href="/" class="hover:opacity-90 active:opacity-85">Home</a></li>
-                        <li><a href="/add" class="hover:opacity-90 active:opacity-85">Add Car</a></li>
-                        <li><a href="/cars" class="hover:opacity-90 active:opacity-85">Rent Car</a></li>
-                        <li><a href="/transaction" class="hover:opacity-90 active:opacity-85">My Transaction</a></li>
-                        <li><a href="/about" class="hover:opacity-90 active:opacity-85">About Us</a></li>
-                        <li><a href="/contact" class="hover:opacity-90 active:opacity-85">Contact</a></li>
+                <div class="flex justify-between gap-6">
+                    <nav>
+                        <ul class="flex justify-end gap-3 text-lg">
+                            <li><a href="/" class="hover:opacity-90 active:opacity-85">Home</a></li>
+                            <li><a href="/add" class="hover:opacity-90 active:opacity-85">Add Car</a></li>
+                            <li><a href="/cars" class="hover:opacity-90 active:opacity-85">Rent Car</a></li>
+                            <li><a href="/transaction" class="hover:opacity-90 active:opacity-85">My Transaction</a></li>
+                            <li><a href="/about" class="hover:opacity-90 active:opacity-85">About Us</a></li>
+                            <li><a href="/contact" class="hover:opacity-90 active:opacity-85">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <ul class="flex justify-between items-center gap-3">
+                        <li class="text-lg font-semibold">Admin</li>
+                        <li><a href="/login" class="hover:opacity-90 active:opacity-85">Logout</a></li>
                     </ul>
-                </nav>
+                </div>
             </div>
         </header>
         <main class="w-full min-h-screen pt-[65px] flex flex-col items-center gap-4">
