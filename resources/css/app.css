@@ -32,6 +32,10 @@
   fill: #000;
 }
 
+.input {
+  border: 1px solid black;
+}
+
 @media screen and (max-width: 1080px) {
   .hero-section {
     background-position: (0 50%);
