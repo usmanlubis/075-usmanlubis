@@ -5,7 +5,5 @@
 @endsection
 
 @section("content")
-  <section>
-    Your Transactions will go here
-  </section>
+  @include("partials.transactions")
 @endsection
