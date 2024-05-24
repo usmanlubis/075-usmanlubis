@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 class CarController extends Controller
 {
 
-    public array $cars = [
+    public $cars = [];
+
+    public function __construct() {
+        $this->cars = [
             [
                 "id" => 1,
                 "name" => "Nissan Livina",
@@ -99,7 +102,8 @@ class CarController extends Controller
                 "price" => 200000
             ]
         ];
-
+    }
+    
     // setter function
     public function addCar(array $newCar) {
         $this->cars[] = $newCar;

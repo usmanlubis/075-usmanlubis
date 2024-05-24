@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 class TransactionController extends Controller
 {
 
-    public array $transactions = [
+    public $transactions = [];
+
+    public function __construct() {
+        $this->transactions = [
             [
                 "id" => 1,
                 "userId" => 4,
@@ -27,6 +30,7 @@ class TransactionController extends Controller
                 "isActive" => true,
             ]
         ];
+    }
     
     // update transaction
     public function updateTransaction(int $id) {
