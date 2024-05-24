@@ -27,10 +27,35 @@ class TransactionController extends Controller
                 "isActive" => true,
             ]
         ];
+    
+    // update transaction
+    public function updateTransaction(int $id) {
+        foreach ($this->transactions as &$transaction) {
+            if ($transaction['id'] == $id) {
+                $transaction['isActive'] = false;
+            }
+        }
+    }
+    //end of update transaction
 
     public function index() {
+        $selectedTransactions = [];
+        foreach ($this->transactions as $transaction) {
+            if ($transaction['isActive']) {
+                $selectedTransactions[] = $transaction;
+            }
+        }
+
         return view('transaction', [
-            "transactions" => $this->transactions
+            "transactions" => $selectedTransactions
         ]);
+    }
+
+    public function update(Request $request) {
+        $id = $request['id'];
+
+        $this->updateTransaction ($id);
+        return $id;
+        // return reditect()->route('transaction');
     }
 }

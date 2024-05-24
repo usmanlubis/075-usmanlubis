@@ -209,7 +209,10 @@ Route::controller(CarController::class)->group(function() {
     Route::delete('delete/{id}', "destroy")->name("car-destroy");
 });
 
-Route::get('/transaction', [TransactionController::class, "index"])->name("transaction");
+Route::controller(TransactionController::class)->group(function() {
+    Route::get('/transaction', "index")->name("transaction");
+    Route::patch('transaction', "update")->name("transaction-update");
+});
 
 Route::get('login', [UserController::class, "index"])->name('login');
 
