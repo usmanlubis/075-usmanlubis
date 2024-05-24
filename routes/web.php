@@ -206,6 +206,7 @@ Route::controller(CarController::class)->group(function() {
     Route::get('/edit/{id}', "edit")->name("car.edit");
     Route::patch('edit/{id}', "update")->name("car-update");
     Route::get('/delete/{id}', "delete")->name("car.delete");
+    Route::delete('delete/{id}', "destroy")->name("car-destroy");
 });
 
 Route::get('/transaction', [TransactionController::class, "index"])->name("transaction");

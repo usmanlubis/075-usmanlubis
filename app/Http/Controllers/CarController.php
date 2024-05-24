@@ -116,6 +116,15 @@ class CarController extends Controller
             }
         }
     }
+
+    public function deleteCar(int $id) {
+        foreach ($this->cars as $key => $car) {
+            if ($car['id'] == $id) {
+                unset($this->cars[$key]);
+                $this->cars = array_values($this->cars);
+            }
+        }
+    }
     // end setter function
 
     // for get method
@@ -221,4 +230,21 @@ class CarController extends Controller
         return $this->cars;
     }
     // end of edit car
+
+    // delete car
+    public function destroy(Request $request) {
+        $id = $request->all()['id'];
+
+        foreach ($this->cars as $key => $car) {
+            if ($car['id'] == $id) {
+                unset($this->cars[$key]);
+                $this->cars = array_values($this->cars);
+            }
+        }
+        
+        // $this->deleteCar($id);
+        // return $id
+        return redirect()->route('cars');
+    }
+    //end of delete car
 }
