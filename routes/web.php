@@ -201,8 +201,10 @@ Route::controller(CarController::class)->group(function() {
     Route::get('/', "index")->name("homepage");
     Route::get('/cars', "show")->name("cars");
     Route::get('/car/{id}', "detail")->name("car-detail");
-    Route::get('/add', "add")->name('add');
+    Route::get('/add', "create")->name("add");
+    Route::post('add', "store")->name("car-store");
     Route::get('/edit/{id}', "edit")->name("car.edit");
+    Route::patch('edit/{id}', "update")->name("car-update");
     Route::get('/delete/{id}', "delete")->name("car.delete");
 });
 

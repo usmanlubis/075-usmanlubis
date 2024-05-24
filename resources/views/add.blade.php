@@ -7,7 +7,8 @@
 @section("content")
     <div class="w-full max-w-[1440px] p-6 flex flex-col items-center gap-4">
         <h1 class="text-3xl font-bold">Add new car</h1>
-        <form action="" class="max-w-[450px] flex flex-col w-full gap-4">
+        <form action="{{ route('car-store')}}" method="POST" class="max-w-[450px] flex flex-col w-full gap-4">
+            @csrf
         <div class="flex flex-col gap-1">
             <label for="name">Name</label>
             <input type="text" name="name" id="name"class="input w-full p-1 rounded-md focus:outline-2 focus:outline-erentGreen" required>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
+
     public array $cars = [
             [
                 "id" => 1,
@@ -99,17 +100,36 @@ class CarController extends Controller
             ]
         ];
 
+    // setter function
+    public function addCar(array $newCar) {
+        $this->cars[] = $newCar;
+    }
+
+    public function updateCar(int $id, array $carData) {
+        foreach ($this->cars as &$car) {
+            if ($car['id'] == $carData['id']) {
+                $car['name'] = $carData['name'];
+                $car['image'] = $carData['image'];
+                $car['year'] = $carData['year'];
+                $car['description'] = $carData['description'];
+                $car['price'] = $carData['price'];
+            }
+        }
+    }
+    // end setter function
+
+    // for get method
     public function index() {
         $selectedCars = [];
         foreach ($this->cars as $car) {
             if ($car['isAvailable']){
-                array_push($selectedCars, $car);
+                $selectedCars[] = $car;
             }
         }
 
         return view('homepage', [
         "cars" => $selectedCars
-    ]);
+        ]);
     }
 
     public function show() {
@@ -154,7 +174,51 @@ class CarController extends Controller
         ]);
     }
 
-    public function add() {
+    public function create() {
         return view('add');
     }
+
+    // end of get nethod
+
+    // create new car
+    public function store(Request $request) {
+        $payload = $request->all();
+        $id = ($this->cars[count($this->cars) - 1]['id']) + 1;
+        $newCar = [
+            "id" => $id,
+            "name" => $payload['name'],
+            "image" => $payload['image'],
+            "year" => $payload['year'],
+            "description" => $payload['description'],
+            "isAvailable" => true,
+            "price" => $payload['price']
+        ];
+
+        $this->addCar($newCar);
+
+        // return redirect()->route('car-detail', ['id' => $id]);
+        return $this->cars;
+    }
+    // end of create new car
+
+    // edit car
+    public function update(Request $request) {
+        $payload = $request->all();
+
+        $carData = [
+            "id" => $payload['id'],
+            "name" => $payload['name'],
+            "image" => $payload['image'],
+            "year" => $payload['year'],
+            "description" => $payload['description'],
+            "isAvailable" => true,
+            "price" => $payload['price']
+        ];
+
+        $this->updateCar($payload['id'], $carData);
+
+        // return redirect()->route('car-detail', ['id' => $payload['id']]);
+        return $this->cars;
+    }
+    // end of edit car
 }
