@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Models\Transaction;
 
 class CarController extends Controller
 {
@@ -104,6 +105,14 @@ class CarController extends Controller
 
         $car = Car::findOrFail($id);
         $car->update($updatedCar);
+
+        $transactions = Transaction::where('car_id', $id)->get();
+
+        foreach ($transactions as $transaction) {
+            $transaction->carName = $payload['name'];
+            $transaction->carImage = $payload['image'];
+            $transaction->save();
+        }
 
         return redirect()->route('car-detail', [
             'id' => $car['id']
