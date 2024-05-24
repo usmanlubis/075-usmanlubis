@@ -14,7 +14,8 @@ function calculateTotalPrice(startDate, returnDate) {
   days = Math.floor(days / (1000 * 60 * 60 * 24)) + 1;
 
   if (!isNaN(days) && days > 0) {
-    totalPrice.textContent = `Rp. ${(carPrice * days).toLocaleString("id-ID")}`;
+    const totalPriceValue = carPrice * days;
+    totalPrice.textContent = `Rp. ${totalPriceValue.toLocaleString("id-ID")}`;
   } else {
     totalPrice.textContent = `Rp. 0`;
   }

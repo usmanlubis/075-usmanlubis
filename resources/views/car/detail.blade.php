@@ -16,7 +16,8 @@
         <p>Rp. {{ number_format($car['price'], 0, ',', '.') }}/day</p>
         <p id="car-price" class="hidden">{{ $car['price'] }}</p>
         <p class="text-justify">{{ $car['description'] }}</p>
-        <form action="" class="flex flex-col gap-2">
+        <form action=" {{ route('transaction-store', $car['id']) }}" method="POST" class="flex flex-col gap-2">
+          @csrf
           <div class="flex flex-col gap-1">
             <label for="start">Start Date</label>
             <input type="date" name="start" id="start" class="input w-full p-1 rounded-md focus:outline-2 focus:outline-erentGreen" required>
@@ -24,6 +25,10 @@
           <div class="flex flex-col gap-1">
             <label for="return">Return Date</label>
             <input type="date" name="return" id="return" class="input w-full p-1 rounded-md focus:outline-2 focus:outline-erentGreen" required>
+            <input type="number" name="id" id="id" value="{{ $car['id'] }}" required class="hidden">
+            <input type="text" name="name" id="name" value="{{ $car['name'] }}" required class="hidden">
+            <input type="text" name="image" id="image" value="{{ $car['image'] }}" required class="hidden">
+            <input type="number" name="price" id="price" value="{{ $car['price'] }}" required class="hidden">
           </div>
           <div>
             <p class="mt-4 font-bold text-xl">Total price: <span id="total-price">0</span></p>

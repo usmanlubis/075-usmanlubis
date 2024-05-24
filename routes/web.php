@@ -19,7 +19,8 @@ Route::controller(CarController::class)->group(function() {
 
 Route::controller(TransactionController::class)->group(function() {
     Route::get('/transaction', "index")->name("transaction");
-    Route::patch('transaction', "update")->name("transaction-update");
+    Route::post('/car/{id}', "store")->name("transaction-store");
+    Route::patch('/transaction', "update")->name("transaction-update");
 });
 
 Route::get('login', [UserController::class, "index"])->name('login');

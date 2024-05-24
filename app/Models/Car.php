@@ -9,6 +9,6 @@ class Car extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "name", "image", "year", "description", "price"
+        "name", "image", "year", "description", "price", "isAvailable"
     ];
 }

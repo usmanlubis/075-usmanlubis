@@ -3,48 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Transaction;
+use App\Models\Car;
 
 class TransactionController extends Controller
 {
-
-    public $transactions = [];
-
-    public function __construct() {
-        $this->transactions = [
-            [
-                "id" => 1,
-                "userId" => 4,
-                "carName" => "Honda BRV",
-                "carImage" => "https://i.postimg.cc/Xqm60y93/daihatsu-xenia.png",
-                "returnDate" => "31-05-2024",
-                "totalPrice" => 700000,
-                "isActive" => true,
-            ],
-            [
-                "id" => 2,
-                "userId" => 4,
-                "carName" => "BMW F30",
-                "carImage" => "https://i.postimg.cc/q7kYSGWy/bmw-f30.png",
-                "returnDate" => "31-05-2024",
-                "totalPrice" => 4500000,
-                "isActive" => true,
-            ]
-        ];
-    }
-    
-    // update transaction
-    public function updateTransaction(int $id) {
-        foreach ($this->transactions as &$transaction) {
-            if ($transaction['id'] == $id) {
-                $transaction['isActive'] = false;
-            }
-        }
-    }
-    //end of update transaction
-
     public function index() {
+        $transactions = Transaction::all();
         $selectedTransactions = [];
-        foreach ($this->transactions as $transaction) {
+        foreach ($transactions as $transaction) {
             if ($transaction['isActive']) {
                 $selectedTransactions[] = $transaction;
             }
@@ -55,11 +22,53 @@ class TransactionController extends Controller
         ]);
     }
 
-    public function update(Request $request) {
-        $id = $request['id'];
+    public function store(Request $request) {
+        $payload = $request->all();
 
-        $this->updateTransaction ($id);
-        return $id;
-        // return reditect()->route('transaction');
+        $startDate = strtotime($payload['start']);
+        $endDate = strtotime($payload['return']);
+        $diff = $endDate - $startDate;
+        $days = ($diff / (60 * 60 * 24)) + 1;
+        $totalPrice = $payload['price'] * $days;
+
+        $newTransaction = [
+            "carName" => $payload['name'],
+            "carImage" => $payload['image'],
+            "startDate" => $payload['start'],
+            "returnDate" => $payload['return'],
+            "totalPrice" => $totalPrice,
+            "car_id" => $payload['id']
+        ];
+
+        $transaction = Transaction::create($newTransaction);
+
+        $updatedCar = [
+            "isAvailable" => false
+        ];
+
+        $car = Car::findOrFail($payload['id']);
+        $car->update($updatedCar);
+
+        return redirect()->route('transaction');
+    }
+
+    public function update(Request $request) {
+        $id = $request->all()['id'];
+        $car_id = $request->all()['car_id'];
+        $updatedTransaction = [
+            "isActive" => false 
+        ];
+
+        $transaction = Transaction::findOrFail($id);
+        $transaction->update($updatedTransaction);
+
+        $updatedCar = [
+            "isAvailable" => true
+        ];
+
+        $car = Car::findOrFail($car_id);
+        $car->update($updatedCar);
+
+        return redirect()->route('transaction');
     }
 }

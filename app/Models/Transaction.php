@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Transaction extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        "carName", "carImage", "startDate", "returnDate", "totalPrice", "car_id", "isActive"
+    ];
 }

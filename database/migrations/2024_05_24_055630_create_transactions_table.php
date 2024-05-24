@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('returnDate');
             $table->integer('totalPrice');
             $table->boolean('isActive')->default(true);
-            $table->string('car_Id');
+            $table->string('car_id');
             $table->timestamps();
         });
     }

@@ -27,7 +27,7 @@ class CarController extends Controller
 
         return view('rent', [
         "cars" => $cars
-    ]);
+        ]);
     }
 
     public function detail(int $id) {
