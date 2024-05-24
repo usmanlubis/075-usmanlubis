@@ -8,14 +8,14 @@
                 <p class="text-gray-600 mt-2 font-semibold text-lg">Rp. {{ number_format($car['price'], 0, ',', '.') }}/day</p>
                 @if($car["isAvailable"])
                     <p class="text-erentGreen">&#10004; Available</p>
+                    <a href="/delete/{{ $car['id'] }}">
+                        <button class="w-full mt-4 bg-erentRed active:bg-erentRed/15 transition duration-100 ease-in-out text-white px-4 py-2 rounded-md hover:bg-white hover:text-erentRed hover:outline hover:outline-erentRed">Delete Car</button>
+                    </a>
                     @else
                     <p class="text-red-700">&#10006; Unavalibale</p>
                 @endif
                 <a href="/edit/{{ $car['id'] }}">
                     <button class="w-full mt-4 bg-erentYellow active:bg-erentYellow/15 transition duration-100 ease-in-out text-black px-4 py-2 rounded-md hover:bg-white hover:outline hover:outline-erentYellow">Edit Car</button>
-                </a>
-                <a href="/delete/{{ $car['id'] }}">
-                    <button class="w-full mt-4 bg-erentRed active:bg-erentRed/15 transition duration-100 ease-in-out text-white px-4 py-2 rounded-md hover:bg-white hover:text-erentRed hover:outline hover:outline-erentRed">Delete Car</button>
                 </a>
                 <a href="/car/{{ $car['id'] }}">
                     <button class="w-full mt-4 bg-erentGreen active:bg-erentGreen/15 transition duration-100 ease-in-out text-white px-4 py-2 rounded-md hover:bg-white hover:text-erentGreen hover:outline hover:outline-erentGreen">See Detail</button>
