@@ -18,15 +18,22 @@ class UserSeeder extends Seeder
             [
                 "name" => "Admin",
                 "email" => "admin@erent.com",
-                "phone" => "082119431576",
                 "password" => bcrypt('admin'),
+                "phone" => "082119431576",
                 "role_id" => 1,
             ],
             [
-                "name" => "User",
-                "email" => "user@erent.com",
+                "name" => "Joni",
+                "email" => "joni@gmail.com",
+                "password" => bcrypt('joni'),
                 "phone" => "08219431577",
-                "password" => bcrypt('user'),
+                "role_id" => 2,
+            ],
+            [
+                "name" => "Toni",
+                "email" => "toni@gmail.com",
+                "password" => bcrypt('toni'),
+                "phone" => "08219431578",
                 "role_id" => 2,
             ]
             ]);
