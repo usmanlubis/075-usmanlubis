@@ -36,6 +36,11 @@
   border: 1px solid black;
 }
 
+.icon-404 {
+  width: 200px;
+  height: 200px;
+}
+
 @media screen and (max-width: 1080px) {
   .hero-section {
     background-position: (0 50%);

@@ -32,10 +32,11 @@ Route::controller(AuthController::class)->group(function() {
     Route::get('/logout', "logout")->name('logout')->middleware(UserIsLoggedIn::class);
 });
 
-
 Route::view('/about', 'about')->name('about')->middleware(UserIsLoggedIn::class);
 
 Route::view('/contact', 'contact')->name('contact')->middleware(UserIsLoggedIn::class);
+
+Route::fallback(fn() => response()->view('404'))->name('404');
 
 Route::get('/getSession', function(){
     return [
