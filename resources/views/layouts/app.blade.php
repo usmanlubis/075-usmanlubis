@@ -4,10 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield("title")</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
         @vite('resources/css/app.css')
     </head>
     <body class="bg-white text-erentBlack">
-        <header class="z-[3] w-full fixed h-[65px] border-b-[3px] border-erentYellow flex justify-center bg-white">
+        <header class="z-[3] w-full fixed h-[65px] border-b-[3px] border-erentYellow flex justify-center bg-white" x-data="{ open: false }">
             <div class="w-full px-4 max-w-[1440px] flex justify-between items-center">
                 <div>
                     <a href="/">
@@ -15,7 +17,7 @@
                     </a>
                 </div>
                 <div class="flex justify-between gap-6">
-                    <nav>
+                    <nav class="hidden md:block">
                         <ul class="flex justify-end gap-3 text-lg">
                             <li><a href="/" class="hover:opacity-90 active:opacity-85">Home</a></li>
                             @if(session()->get('role_id') == 1)
@@ -27,13 +29,36 @@
                             <li><a href="/contact" class="hover:opacity-90 active:opacity-85">Contact</a></li>
                         </ul>
                     </nav>
-                    <ul class="flex justify-between items-center gap-3">
+                    <div class="hidden md:flex items-center gap-3">
+                        <span class="text-lg font-semibold">{{ session()->get("name") }}</span>
+                        @if(session()->get('isLogged'))
+                            <a href="{{ route('logout') }}" class="text-lg hover:opacity-90 active:opacity-85">Logout</a>
+                        @endif
+                    </div>
+                    <button @click="open = !open" class="block md:hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div x-show="open" @click.away="open = false" class="w-[400px] md:hidden h-screen bg-white">
+                <nav>
+                    <ul class="flex flex-col items-end gap-3 text-lg mt-4 pr-6 px-4">
+                        <li><a href="/" class="hover:opacity-90 active:opacity-85">Home</a></li>
+                        @if(session()->get('role_id') == 1)
+                            <li><a href="/add" class="hover:opacity-90 active:opacity-85">Add Car</a></li>
+                        @endif
+                        <li><a href="/cars" class="hover:opacity-90 active:opacity-85">All Car</a></li>
+                        <li><a href="/transaction" class="hover:opacity-90 active:opacity-85">My Transaction</a></li>
+                        <li><a href="/about" class="hover:opacity-90 active:opacity-85">About Us</a></li>
+                        <li><a href="/contact" class="hover:opacity-90 active:opacity-85">Contact</a></li>
                         <li class="text-lg font-semibold">{{ session()->get("name") }}</li>
                         @if(session()->get('isLogged'))
                             <li><a href="{{ route('logout') }}" class="text-lg hover:opacity-90 active:opacity-85">Logout</a></li>
                         @endif
                     </ul>
-                </div>
+                </nav>
             </div>
         </header>
         <main class="w-full min-h-screen pt-[65px] flex flex-col items-center gap-4">

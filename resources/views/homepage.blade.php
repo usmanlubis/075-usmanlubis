@@ -6,7 +6,7 @@
 
 @section("content")
     <x-hero>
-        <div class="relative flex flex-col items-center justify-center w-full h-full gap-2 text-white">
+        <div class="relative flex flex-col items-center justify-center w-full h-full gap-2 text-white text-center">
             <h2 class="text-[5rem] font-bold -my-6">eRent</h2>
             <p class="text-2xl">Find your perfect car at the best price</p>
             <div>
