@@ -1,7 +1,8 @@
 const startDate = document.getElementById("start");
 const returnDate = document.getElementById("return");
-const totalPrice = document.getElementById("total-price");
+const dateInvalidMsg = document.getElementById("invalid-date-input");
 const carPrice = Number(document.getElementById("car-price").textContent);
+const totalPrice = document.getElementById("total-price");
 const rentButton = document.getElementById("rent");
 
 let startDateValue;
@@ -18,8 +19,10 @@ function calculateTotalPrice(startDate, returnDate) {
   yesterday.setDate(yesterday.getDate() - 1);
 
   if (days > 0 && start >= yesterday && end >= yesterday) {
+    dateInvalidMsg.classList.add("hidden");
     rentButton.removeAttribute("disabled", false);
   } else {
+    dateInvalidMsg.classList.remove("hidden");
     rentButton.setAttribute("disabled", true);
   }
 
