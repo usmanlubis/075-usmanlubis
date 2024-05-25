@@ -26,10 +26,12 @@ class AuthController extends Controller
         }
 
         $request->session()->regenerate();
-        $request->session()->put('isLogged', true);
-        $request->session()->put("user_id", $user->id);
-        $request->session()->put("role_id", $user->role_id);
+        $request->session()->put("isLogged", true);
+        $request->session()->put("id", $user->id);
         $request->session()->put("name", $user->name);
+        $request->session()->put("email", $user->email);
+        $request->session()->put("phone", $user->phone);
+        $request->session()->put("role_id", $user->role_id);
 
         return redirect()->route('homepage');
     }

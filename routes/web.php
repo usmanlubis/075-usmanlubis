@@ -34,3 +34,13 @@ Route::controller(AuthController::class)->group(function() {
 Route::view('/about', 'about')->name('about');
 
 Route::view('/contact', 'contact')->name('contact');
+
+Route::get('/getSession', function(){
+    return [
+        "id" => session()->get("id"),
+        "name" => session()->get("name"),
+        "email" => session()->get("email"),
+        "phone" => session()->get("phone"),
+        "role_id" => session()->get("role_id"),
+    ];
+});
