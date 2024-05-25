@@ -18,7 +18,9 @@
                     <nav>
                         <ul class="flex justify-end gap-3 text-lg">
                             <li><a href="/" class="hover:opacity-90 active:opacity-85">Home</a></li>
-                            <li><a href="/add" class="hover:opacity-90 active:opacity-85">Add Car</a></li>
+                            @if(session()->get('role_id') == 1)
+                                <li><a href="/add" class="hover:opacity-90 active:opacity-85">Add Car</a></li>
+                            @endif
                             <li><a href="/cars" class="hover:opacity-90 active:opacity-85">All Car</a></li>
                             <li><a href="/transaction" class="hover:opacity-90 active:opacity-85">My Transaction</a></li>
                             <li><a href="/about" class="hover:opacity-90 active:opacity-85">About Us</a></li>
@@ -27,7 +29,9 @@
                     </nav>
                     <ul class="flex justify-between items-center gap-3">
                         <li class="text-lg font-semibold">{{ session()->get("name") }}</li>
-                        <li><a href="/login" class="text-lg hover:opacity-90 active:opacity-85">Logout</a></li>
+                        @if(session()->get('isLogged'))
+                            <li><a href="{{ route('logout') }}" class="text-lg hover:opacity-90 active:opacity-85">Logout</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>

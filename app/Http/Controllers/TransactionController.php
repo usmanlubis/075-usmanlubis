@@ -10,10 +10,22 @@ class TransactionController extends Controller
 {
     public function index() {
         $transactions = Transaction::all();
-        $selectedTransactions = [];
+        $activeTransaction = [];
         foreach ($transactions as $transaction) {
             if ($transaction['isActive']) {
-                $selectedTransactions[] = $transaction;
+                $activeTransaction[] = $transaction;
+            }
+        }
+
+        $selectedTransactions = [];
+        if (session()->get('role_id') == 1) {
+            $selectedTransactions = $activeTransaction;
+        } else {
+            $user_id = session()->get('id');
+            foreach ($activeTransaction as $transaction) {
+                if ($transaction['renter_id'] == $user_id) {
+                    $selectedTransactions[] = $transaction;
+                }
             }
         }
 

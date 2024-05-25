@@ -25,7 +25,7 @@ Route::controller(TransactionController::class)->group(function() {
 });
 
 Route::controller(AuthController::class)->group(function() {
-    Route::get('/login', "loginPage")->name('loginPage');
+    Route::get('/login', "loginPage")->name('login-page');
     Route::post('/login', "login")->name('login');
     Route::get('/logout', "logout")->name('logout');
 });
@@ -37,6 +37,7 @@ Route::view('/contact', 'contact')->name('contact');
 
 Route::get('/getSession', function(){
     return [
+        "isLogged" => session()->get("isLogged"),
         "id" => session()->get("id"),
         "name" => session()->get("name"),
         "email" => session()->get("email"),

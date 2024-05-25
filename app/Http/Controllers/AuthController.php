@@ -38,6 +38,15 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
+        // session()->forget("isLogged");
+        // session()->forget("id");
+        // session()->forget("name");
+        // session()->forget("email");
+        // session()->forget("phone");
+        // session()->forget("role_id");
 
+        session()->flush();
+
+        return redirect()->route('login-page');
     }
 }
