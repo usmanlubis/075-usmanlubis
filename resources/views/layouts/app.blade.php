@@ -26,8 +26,8 @@
                         </ul>
                     </nav>
                     <ul class="flex justify-between items-center gap-3">
-                        <li class="text-lg font-semibold">Admin</li>
-                        <li><a href="/login" class="hover:opacity-90 active:opacity-85">Logout</a></li>
+                        <li class="text-lg font-semibold">{{ session()->get("name") }}</li>
+                        <li><a href="/login" class="text-lg hover:opacity-90 active:opacity-85">Logout</a></li>
                     </ul>
                 </div>
             </div>

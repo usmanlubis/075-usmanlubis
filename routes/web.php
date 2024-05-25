@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 
 Route::controller(CarController::class)->group(function() {
     Route::get('/', "index")->name("homepage");
@@ -23,7 +24,12 @@ Route::controller(TransactionController::class)->group(function() {
     Route::patch('/transaction', "update")->name("transaction-update");
 });
 
-Route::get('login', [UserController::class, "index"])->name('login');
+Route::controller(AuthController::class)->group(function() {
+    Route::get('/login', "loginPage")->name('loginPage');
+    Route::post('/login', "login")->name('login');
+    Route::get('/logout', "logout")->name('logout');
+});
+
 
 Route::view('/about', 'about')->name('about');
 

@@ -35,7 +35,7 @@
           </div>
           <div>
             @if ($car['isAvailable'])
-              <button type="submit" class="w-full mt-4 bg-erentGreen active:bg-erentGreen/15 transition duration-100 ease-in-out text-white px-4 py-2 rounded-md hover:bg-white hover:text-erentGreen hover:outline hover:outline-erentGreen">Rent</button>
+              <button type="submit" id="rent" class="w-full mt-4 bg-erentGreen active:bg-erentGreen/15 transition duration-100 ease-in-out text-white px-4 py-2 rounded-md hover:bg-white hover:text-erentGreen hover:outline hover:outline-erentGreen">Rent</button>
             @else
               <p class="text-red-700 mb-[-15px]">&#10006; This car is being rented</p>
               <button type="submit" disabled class="cursor-not-allowed w-full mt-4 text-black/80 px-4 py-2 rounded-md bg-slate-300">Rent</button>

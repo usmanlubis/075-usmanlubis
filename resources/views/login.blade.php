@@ -11,7 +11,11 @@
     <div class="flex flex-col gap-3 w-full max-w-[450px] border-2 p-4 shadow-lg rounded-lg">
       <img src="{{ asset('images/logo.png') }}" alt="eRent Logo" class="h-[80px] mx-auto">
       <h1 class="text-3xl text-center font-bold text-black/90 mt-8">Log In</h1>
-      <form action="" class="flex flex-col gap-4">
+      @if(session()->get("error"))
+        <p class="text-erentRed text-center">{{ session()->get("error") }}</p>
+      @endif
+      <form action="{{ route('login') }}" method="POST" class="flex flex-col gap-4">
+        @csrf
         <div class="flex flex-col gap-1">
           <label for="email">Email</label>
           <input type="email" name="email" id="email" class="input w-full p-1 rounded-md focus:outline-2 focus:outline-erentGreen" required>
