@@ -5,6 +5,9 @@
             <div class="p-4 shadow-xl rounded">
                 <img src="{{ $transaction['carImage'] }}" alt="{{ $transaction['carImage'] }}" class="w-full h-48 object-cover rounded-t">
                 <h3 class="text-xl font-bold mt-4">{{ $transaction['carName'] }}</h3>
+                @if (session()->get('role_id') == 1)
+                    <p>renter ID: {{ $transaction['Renter_id'] }}</p>
+                @endif
                 <p>Return date: {{ $transaction['returnDate'] }}</p>
                 <p class="text-gray-600 mt-2 font-semibold text-lg">Rp. {{ number_format($transaction['totalPrice'], 0, ',', '.') }}</p>
                 <p class="text-erentGreen">&#10004; Active</p>

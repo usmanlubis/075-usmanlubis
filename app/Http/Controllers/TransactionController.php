@@ -37,7 +37,8 @@ class TransactionController extends Controller
             "startDate" => $payload['start'],
             "returnDate" => $payload['return'],
             "totalPrice" => $totalPrice,
-            "car_id" => $payload['id']
+            "car_id" => $payload['id'],
+            "renter_id" => $payload['renter_id']
         ];
 
         $transaction = Transaction::create($newTransaction);
