@@ -22,7 +22,7 @@ eRent adalah aplikasi berbasis web yang dibuat untuk booking rental/sewa mobil, 
     ```sh
       npm install
     ```
-5. Jalankan MySQL sebagai datbase dan buat database baru bernama "jda" atau sesuaikan dengan file <code>.env</code>
+5. Jalankan MySQL sebagai database dan buat database baru bernama "jda" atau sesuaikan dengan file <code>.env</code>
 6. Kembali ke terminal, masukkan perintah
     ```sh
       php artisan key:generate
@@ -57,3 +57,4 @@ eRent adalah aplikasi berbasis web yang dibuat untuk booking rental/sewa mobil, 
           - email: `joni@gmail.com`
           - password: joni
 12. Anda sudah masuk ke aplikasi eRent dan jika ingin berpindah akun, anda bisa logout pada navbar di pojok kanan atas
+13. Untuk menambahkan data mobil baru, anda bisa gunakan data pada file [Data Dummy Ini](dummyData.txt)
