@@ -31,21 +31,29 @@ eRent adalah aplikasi berbasis web yang dibuat untuk booking rental/sewa mobil, 
     ```sh
       php artisan migrate
     ```
-8. Lakukan seeding database dengan perintah
+8. Lakukan seeding database untuk Role dengan perintah
     ```sh
-      php artisan db:seed
+      php artisan db:seed RoleSeeder
     ```
-9. Jalankan node untuk Tailwind dengan perintah
+9. Lakukan seeding database untuk User dengan perintah
+    ```sh
+      php artisan db:seed UserSeeder
+    ```
+10. Lakukan seeding database untuk Car (opsional) dengan perintah
+    ```sh
+      php artisan db:seed CarSeeder
+    ```
+11. Jalankan node untuk Tailwind dengan perintah
     ```sh
       npm run dev
     ```
     Biarkan terminal itu, dan buka terminal baru lagi
-10. Jalankan project laravel langsung dengan Laragon atau aplikasi lain yang digunakan atau melalui terminal yang baru tadi dengan perintah
+12. Jalankan project laravel langsung dengan Laragon atau aplikasi lain yang digunakan atau melalui terminal yang baru tadi dengan perintah
     ```sh
       php artisan serve
     ```
     Lalu klik link yang muncul dan akan diarahkan ke web browser
-11. Anda bisa login dengan 2 skema, yaitu sebagai admin dan user biasa
+13. Anda bisa login dengan 2 skema, yaitu sebagai admin dan user biasa
     - Sebagai admin anda bisa login dengan mengisi data form
       - email: `admin@erent.com`
       - password: admin
@@ -56,5 +64,5 @@ eRent adalah aplikasi berbasis web yang dibuat untuk booking rental/sewa mobil, 
       2. User bernama Joni
           - email: `joni@gmail.com`
           - password: joni
-12. Anda sudah masuk ke aplikasi eRent dan jika ingin berpindah akun, anda bisa logout pada navbar di pojok kanan atas
-13. Untuk menambahkan data mobil baru, anda bisa gunakan data pada file [Data Dummy Ini](dummyData.txt)
+14. Anda sudah masuk ke aplikasi eRent dan jika ingin berpindah akun, anda bisa logout pada navbar di pojok kanan atas
+15. Untuk menambahkan data mobil baru, anda bisa gunakan data pada file [Data Dummy Ini](dummyData.txt)
