@@ -36,6 +36,16 @@
             <p class="mt-4 font-bold text-xl">Total price: <span id="total-price">0</span></p>
           </div>
           <div>
+            @if(session()->get('role_id') == 1)
+                <a href="/edit/{{ $car['id'] }}">
+                    <button class="w-full mt-4 bg-erentYellow active:bg-erentYellow/15 transition duration-100 ease-in-out text-black px-4 py-2 rounded-md hover:bg-white hover:outline hover:outline-erentYellow">Edit Car</button>
+                </a>
+                @if($car["isAvailable"])
+                    <a href="/delete/{{ $car['id'] }}">
+                        <button class="w-full mt-4 bg-erentRed active:bg-erentRed/15 transition duration-100 ease-in-out text-white px-4 py-2 rounded-md hover:bg-white hover:text-erentRed hover:outline hover:outline-erentRed">Delete Car</button>
+                    </a>
+                @endif
+            @endif
             @if ($car['isAvailable'])
               <button type="submit" id="rent" class="w-full mt-4 bg-erentGreen active:bg-erentGreen/15 transition duration-100 ease-in-out text-white px-4 py-2 rounded-md hover:bg-white hover:text-erentGreen hover:outline hover:outline-erentGreen">Rent</button>
             @else

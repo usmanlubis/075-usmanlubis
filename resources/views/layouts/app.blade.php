@@ -24,7 +24,11 @@
                                 <li><a href="/add" class="hover:opacity-90 active:opacity-85">Add Car</a></li>
                             @endif
                             <li><a href="/cars" class="hover:opacity-90 active:opacity-85">All Car</a></li>
-                            <li><a href="/transaction" class="hover:opacity-90 active:opacity-85">My Transaction</a></li>
+                            @if(session()->get('role_id') == 1)
+                                <li><a href="/transaction" class="hover:opacity-90 active:opacity-85">Transactions</a></li>
+                            @else
+                                <li><a href="/transaction" class="hover:opacity-90 active:opacity-85">My Transaction</a></li>
+                            @endif
                             <li><a href="/about" class="hover:opacity-90 active:opacity-85">About Us</a></li>
                             <li><a href="/contact" class="hover:opacity-90 active:opacity-85">Contact</a></li>
                         </ul>
@@ -50,7 +54,11 @@
                             <li><a href="/add" class="hover:opacity-90 active:opacity-85">Add Car</a></li>
                         @endif
                         <li><a href="/cars" class="hover:opacity-90 active:opacity-85">All Car</a></li>
-                        <li><a href="/transaction" class="hover:opacity-90 active:opacity-85">My Transaction</a></li>
+                        @if(session()->get('role_id') == 1)
+                            <li><a href="/transaction" class="hover:opacity-90 active:opacity-85">Transactions</a></li>
+                        @else
+                            <li><a href="/transaction" class="hover:opacity-90 active:opacity-85">My Transaction</a></li>
+                        @endif
                         <li><a href="/about" class="hover:opacity-90 active:opacity-85">About Us</a></li>
                         <li><a href="/contact" class="hover:opacity-90 active:opacity-85">Contact</a></li>
                         <li class="text-lg font-semibold">{{ session()->get("name") }}</li>
