@@ -1,68 +1,68 @@
 <h1 align="center">eRent</h1>
 
-## Navigasi
+## Navigation
 
-- [Tentang eRent](#tentang-erent)
-- [Cara Install](#cara-install)
+- [About eRent](#about-erent)
+- [Installation Guide](#installation-guide)
 
-## Tentang eRent
+## About eRent
 Usman Lubis - 075
 
-eRent adalah aplikasi berbasis web yang dibuat untuk booking rental/sewa mobil, berfungsi agar memudahkan user dan pihak rental dalam menawarkan dan memberi informasi mobil-mobil yang tersedia secara otomatis dari sistem, sehingga tidak perlu lagi admin rental membalas pesan satu per satu terkait ketersediaan mobil, harganya, serta spesifikasi dan kondisi mobilnya.
+eRent is a web-based application created for booking car rentals. It facilitates users and rental companies by automatically providing information on available cars, prices, specifications, and conditions. This eliminates the need for rental administrators to respond to inquiries individually about car availability, prices, and details.
 
-## Cara Install
+## Installation Guide
 
-1. Clone project github ini
-2. Masuk terminal dan tempatkan di direktori project
-3. Donwload dependensi laravel dengan perintah
+1. Clone this GitHub project.
+2. Open a terminal and navigate to the project directory.
+3. Download Laravel dependencies with the command:
     ```sh
-      composer install
+    composer install
     ```
-4. Download dependensi node untuk Tailwind dengan perintah
+4. Download Node dependencies for Tailwind with the command:
     ```sh
-      npm install
+    npm install
     ```
-5. Jalankan MySQL sebagai database dan buat database baru bernama "jda" atau sesuaikan dengan file <code>.env</code>
-6. Kembali ke terminal, masukkan perintah
+5. Start MySQL as the database and create a new database named "jda" or adjust it according to the <code>.env</code> file.
+6. In the terminal, enter the command:
     ```sh
-      php artisan key:generate
+    php artisan key:generate
     ```
-7. Lakukan migrasi database dengan perintah
+7. Run the database migrations with the command:
     ```sh
-      php artisan migrate
+    php artisan migrate
     ```
-8. Lakukan seeding database untuk Role dengan perintah
+8. Seed the database for roles with the command:
     ```sh
-      php artisan db:seed RoleSeeder
+    php artisan db:seed RoleSeeder
     ```
-9. Lakukan seeding database untuk User dengan perintah
+9. Seed the database for users with the command:
     ```sh
-      php artisan db:seed UserSeeder
+    php artisan db:seed UserSeeder
     ```
-10. Lakukan seeding database untuk Car (opsional) dengan perintah
+10. Optionally, seed the database for cars with the command:
     ```sh
-      php artisan db:seed CarSeeder
+    php artisan db:seed CarSeeder
     ```
-11. Jalankan node untuk Tailwind dengan perintah
+11. Run Node for Tailwind with the command:
     ```sh
-      npm run dev
+    npm run dev
     ```
-    Biarkan terminal itu, dan buka terminal baru lagi
-12. Jalankan project laravel langsung dengan Laragon atau aplikasi lain yang digunakan atau melalui terminal yang baru tadi dengan perintah
+    Keep this terminal open, and open a new terminal.
+12. Start the Laravel project directly with Laragon or another application, or through the new terminal with the command:
     ```sh
-      php artisan serve
+    php artisan serve
     ```
-    Lalu klik link yang muncul dan akan diarahkan ke web browser
-13. Anda bisa login dengan 2 skema, yaitu sebagai admin dan user biasa
-    - Sebagai admin anda bisa login dengan mengisi data form
-      - email: `admin@erent.com`
-      - password: admin
-    - Sebagai user anda punya 2 akun user
-      1. User bernama Toni
-          - email: `toni@gmail.com`
-          - password: toni
-      2. User bernama Joni
-          - email: `joni@gmail.com`
-          - password: joni
-14. Anda sudah masuk ke aplikasi eRent dan jika ingin berpindah akun, anda bisa logout pada navbar di pojok kanan atas
-15. Untuk menambahkan data mobil baru, anda bisa gunakan data pada file [Data Dummy Ini](dummyData.txt)
+    Click the link that appears to be directed to your web browser.
+13. You can log in with two schemes, as an admin or as a regular user:
+    - As an admin, log in with the following credentials:
+      - Email: `admin@erent.com`
+      - Password: admin
+    - As a user, you have two user accounts:
+      1. User named Toni:
+          - Email: `toni@gmail.com`
+          - Password: toni
+      2. User named Joni:
+          - Email: `joni@gmail.com`
+          - Password: joni
+14. You are now logged into the eRent application. To switch accounts, you can log out using the navbar in the top right corner.
+15. To add new car data, you can use the data in the file [This Dummy Data](dummyData.txt).
