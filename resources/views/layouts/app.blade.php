@@ -7,6 +7,7 @@
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
         @vite('resources/css/app.css')
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     </head>
     <body class="bg-white text-erentBlack">
         <header class="z-[3] w-full fixed h-[65px] border-b-[3px] border-erentYellow flex justify-center bg-white" x-data="{ open: false }">
