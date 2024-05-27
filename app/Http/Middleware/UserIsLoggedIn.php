@@ -15,7 +15,7 @@ class UserIsLoggedIn
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(session()->get("isLogged") == null && session()->get("id") == null){
+        if (session()->get("isLogged") == null && session()->get("id") == null){
             return redirect()->route("login",)->with("error", "Please login first");
         }
 
