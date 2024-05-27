@@ -10,12 +10,15 @@
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     </head>
     <body class="bg-white text-erentBlack">
-        @include("partials.header")
+        @if (session()->get('isLogged'))
+            @include("partials.header")
+        @endif
         <main class="w-full min-h-screen pt-[65px] flex flex-col items-center gap-4">
             @yield("content")
         </main>
-        @include("partials.footer")
-
+        @if (session()->get('isLogged'))
+            @include("partials.footer")
+        @endif
         <script src="{{ asset('js/script.js') }}"></script>
     </body>
 </html>
