@@ -8,18 +8,18 @@
         <div class="flex justify-between gap-6">
             <nav class="hidden md:block">
                 <ul class="flex justify-end gap-3 text-lg">
-                    <li><a href="{{ route('homepage') }}" class="hover:opacity-90 active:opacity-85">Home</a></li>
+                    <li><a href="{{ route('homepage') }}" class="{{ request()->is('/') ? 'opacity-90' : '' }} hover:opacity-90 active:opacity-85">Home</a></li>
                     @if(session()->get('role_id') == 1)
-                        <li><a href="{{ route('add') }}" class="hover:opacity-90 active:opacity-85">Add Car</a></li>
+                        <li><a href="{{ route('add') }}" class="{{ request()->is('/add') ? 'opacity-90' : '' }} hover:opacity-90 active:opacity-85">Add Car</a></li>
                     @endif
-                    <li><a href="{{ route('cars') }}" class="hover:opacity-90 active:opacity-85">All Car</a></li>
+                    <li><a href="{{ route('cars') }}" class="{{ request()->is('/rent') ? 'opacity-90' : '' }} hover:opacity-90 active:opacity-85">All Car</a></li>
                     @if(session()->get('role_id') == 1)
-                        <li><a href="{{ route('transaction') }}" class="hover:opacity-90 active:opacity-85">Transactions</a></li>
+                        <li><a href="{{ route('transaction') }}" class="{{ request()->is('/transaction') ? 'opacity-90' : '' }} hover:opacity-90 active:opacity-85">Transactions</a></li>
                     @else
-                        <li><a href="{{ route('transaction') }}" class="hover:opacity-90 active:opacity-85">My Transaction</a></li>
+                        <li><a href="{{ route('transaction') }}" class="{{ request()->is('/transaction') ? 'opacity-90' : '' }} hover:opacity-90 active:opacity-85">My Transaction</a></li>
                     @endif
-                    <li><a href="{{ route('about') }}" class="hover:opacity-90 active:opacity-85">About Us</a></li>
-                    <li><a href="{{ route('contact') }}" class="hover:opacity-90 active:opacity-85">Contact</a></li>
+                    <li><a href="{{ route('about') }}" class="{{ request()->is('/about') ? 'opacity-90' : '' }} hover:opacity-90 active:opacity-85">About Us</a></li>
+                    <li><a href="{{ route('contact') }}" class="{{ request()->is('/contact') ? 'opacity-90' : '' }} hover:opacity-90 active:opacity-85">Contact</a></li>
                 </ul>
             </nav>
             <div class="items-center hidden gap-3 md:flex">
