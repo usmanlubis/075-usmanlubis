@@ -27,6 +27,9 @@
         <div>
           <button type="submit" class="w-full mt-4 bg-erentGreen active:bg-erentGreen/15 transition duration-100 ease-in-out text-white px-4 py-2 rounded-md hover:bg-white hover:text-erentGreen hover:outline hover:outline-erentGreen">Login</button>
         </div>
+        <div>
+          <p class="text-center">Don't have account? <a href="{{ route('signup-page') }}" class="hover:opacity-90 hover:underline active:opacity-85">Sign Up</a></p>
+        </div>
       </form>
     </div>
   </main>
