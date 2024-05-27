@@ -1,5 +1,5 @@
 <footer class="w-full bg-[#c5c5c5] p-4 border-t-[3px] border-t-erentYellow">
-    <div class="w-full max-w-[1440px] mx-auto flex flex-wrap justify-center lg:justify-evenly gap-8 md:gap-16">
+    <div class="w-full max-w-[1440px] mx-auto flex flex-wrap justify-center lg:justify-evenly gap-8">
         <div class="flex flex-col gap-2">
             <h3 class="text-xl font-semibold">Navigations</h3>
             <ul>
@@ -58,7 +58,7 @@
             </ul>
         </div>
         <div class="flex flex-col gap-2">
-            <h3 class="text-xl font-semibold text-center lg:text-left">Copyrigth</h3>
+            <h3 class="text-xl font-semibold">Copyrigth</h3>
             <p>View source code on <a href="https://www.github.com/usmanlubis/075-usmanlubis" target="_blank" class="hover:opacity-90 hover:underline active:opacity-85">GitHub.</a></p>
             <p>&copy; {{ date('Y') }} eRent made by <a href="https://www.github.com/usmanlubis" target="_blank" class="hover:opacity-90 hover:underline active:opacity-85">Usman Lubis</a></p>
         </div>

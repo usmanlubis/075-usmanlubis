@@ -22,7 +22,7 @@
                     <li><a href="{{ route('contact') }}" class="hover:opacity-90 active:opacity-85">Contact</a></li>
                 </ul>
             </nav>
-            <div class="hidden md:flex items-center gap-3">
+            <div class="items-center hidden gap-3 md:flex">
                 <span class="text-lg font-semibold">{{ session()->get("name") }}</span>
                 @if(session()->get('isLogged'))
                     <a href="{{ route('logout') }}" class="text-lg hover:opacity-90 active:opacity-85">Logout</a>
@@ -35,9 +35,9 @@
             </button>
         </div>
     </div>
-    <div x-show="open" @click.away="open = false" class="w-[400px] md:hidden h-screen bg-white">
+    <div x-show="open" @click.away="open = false" class="w-[400px] lg:hidden h-screen bg-white">
         <nav>
-            <ul class="flex flex-col items-end gap-3 text-lg mt-4 pr-6 px-4">
+            <ul class="flex flex-col items-end gap-3 px-4 pr-6 mt-4 text-lg">
                 <li><a href="{{ route('homepage') }}" class="hover:opacity-90 active:opacity-85">Home</a></li>
                 @if(session()->get('role_id') == 1)
                     <li><a href="{{ route('add') }}" class="hover:opacity-90 active:opacity-85">Add Car</a></li>
