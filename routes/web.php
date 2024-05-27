@@ -29,6 +29,7 @@ Route::controller(TransactionController::class)->middleware(UserIsLoggedIn::clas
 Route::controller(AuthController::class)->group(function() {
     Route::get('/login', "loginPage")->name('login-page');
     Route::post('/login', "login")->name('login');
+    Route::get('/signup', "signupPage")->name('signup-page');
     Route::get('/logout', "logout")->name('logout')->middleware(UserIsLoggedIn::class);
 });
 
