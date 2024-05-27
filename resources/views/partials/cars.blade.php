@@ -2,12 +2,12 @@
     @if($cars == null || count($cars) == 0)
         <h1 id="rent-now" class="text-center font-bold text-3xl pb-[25px]">Rent Car</h1>
         @if(request()->is('/'))
-            <p class="italic text-center">No cars available. <a href="{{ route('cars') }}" class="text-semibold !not-italic hover:opacity-90 hover:underline active:opacity-85">See all cars here.</a></p>
+            <p class="italic text-center">No cars available. <a href="{{ route('cars') }}" class="text-semibold !not-italic hover:opacity-90 hover:underline active:opacity-85">See all cars.</a></p>
         @else
             @if(session()->get('role_id') == 1)
-                <p class="italic text-center">No cars on database. <a href="{{ route('add') }}" class="text-semibold !not-italic hover:opacity-90 hover:underline active:opacity-85">Add car here.</a></p>
+                <p class="italic text-center">No cars on database. <a href="{{ route('add') }}" class="text-semibold !not-italic hover:opacity-90 hover:underline active:opacity-85">Add car.</a></p>
             @else
-                <p class="italic text-center">No cars on the list. <a href="{{ route('contact') }}" class="text-semibold !not-italic hover:opacity-90 hover:underline active:opacity-85">Contact us here.</a></p>
+                <p class="italic text-center">No cars on the list. <a href="{{ route('contact') }}" class="text-semibold !not-italic hover:opacity-90 hover:underline active:opacity-85">Contact us.</a></p>
             @endif
         @endif
     @else
