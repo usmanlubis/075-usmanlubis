@@ -59,8 +59,8 @@
         </div>
         <div class="flex flex-col gap-2">
             <h3 class="text-xl font-semibold">Copyrigth</h3>
-            <p>View source code on <a href="https://www.github.com/usmanlubis/075-usmanlubis" target="_blank" class="hover:opacity-90 hover:underline active:opacity-85">GitHub.</a></p>
-            <p>&copy; {{ date('Y') }} eRent made by <a href="https://www.github.com/usmanlubis" target="_blank" class="hover:opacity-90 hover:underline active:opacity-85">Usman Lubis</a></p>
+            <p>View source code on <a href="https://www.github.com/usmanlubis/075-usmanlubis" target="_blank" class="text-semibold hover:opacity-90 hover:underline active:opacity-85">GitHub.</a></p>
+            <p>&copy; {{ date('Y') }} eRent made by <a href="https://www.github.com/usmanlubis" target="_blank" class="text-semibold hover:opacity-90 hover:underline active:opacity-85">Usman Lubis</a></p>
         </div>
     </div>
 </footer>
