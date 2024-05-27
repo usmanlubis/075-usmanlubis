@@ -66,4 +66,4 @@ eRent is a web-based application created for booking car rentals. It facilitates
           - Password: joni
     - You can also register a new account by signing up.
 14. You are now logged into the eRent application. To switch accounts, you can log out using the navbar in the top right corner.
-15. To add new car data, you can use the data in the file [This Dummy Data](dummyData.txt).
+15. To add a new car data, you can use this [dummyData.txt](dummyData.txt).
