@@ -7,15 +7,20 @@
       @vite('resources/css/app.css')
   </head>
   <body>
-    <main class="login w-full h-screen flex justify-center items-center p-4 border-2 border-black">
+    <main class="login w-full h-screen flex justify-center items-center p-4">
       <div class="flex flex-col gap-3 w-full max-w-[450px] border-2 p-4 shadow-lg rounded-lg">
         <img src="{{ asset('images/logo.png') }}" alt="eRent Logo" class="h-[80px] mx-auto">
         <h1 class="text-3xl text-center font-bold text-black/90 mt-8">Sign Up</h1>
         @if(session()->get("error"))
-          <p class="text-erentRed text-center">{{ session()->get("error") }}</p>
+          <p class="text-erentRed text-center -mt-2">{{ session()->get("error") }}</p>
         @endif
-        <form action="{{ route('login') }}" method="POST" class="flex flex-col gap-4">
+        <form id="signup-form" action="{{ route('signup') }}" method="POST" class="flex flex-col gap-4">
           @csrf
+          <div class="flex flex-col gap-1">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="signup-input-name input w-full p-1 rounded-md focus:outline-2 focus:outline-erentGreen" required>
+            <small id="nameError" class="error" style="display:none;">Name must at least 3 characters.</small>
+          </div>
           <div class="flex flex-col gap-1">
             <label for="email">Email</label>
             <input type="email" name="email" id="email" class="input w-full p-1 rounded-md focus:outline-2 focus:outline-erentGreen" required>
@@ -38,5 +43,7 @@
         </form>
       </div>
     </main>
+
+    <script src="{{ asset('js/script.js') }}"></script>
   </body>
 </html>

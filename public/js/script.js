@@ -44,4 +44,25 @@ document.addEventListener("DOMContentLoaded", function () {
     returnDateValue = e.target.value;
     calculateTotalPrice(startDateValue, returnDateValue);
   });
+
+  document
+    .getElementById("signup-form")
+    .addEventListener("submit", function (event) {
+      const nameInput = document.getElementById("name").value.trim();
+      if (nameInput.replace(/\s/g, "").length < 3) {
+        event.preventDefault();
+        document.getElementById("nameError").style.display = "inline";
+      } else {
+        document.getElementById("nameError").style.display = "none";
+      }
+    });
+
+  document
+    .querySelector(".signup-input-name")
+    .addEventListener("input", function () {
+      const nameInput = this.value.trim();
+      if (nameInput.replace(/\s/g, "").length >= 3) {
+        document.getElementById("nameError").style.display = "none";
+      }
+    });
 });

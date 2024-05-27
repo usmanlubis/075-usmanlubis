@@ -7,7 +7,7 @@
       @vite('resources/css/app.css')
   </head>
 <body>
-  <main class="login w-full h-screen flex justify-center items-center p-4 border-2 border-black">
+  <main class="login w-full h-screen flex justify-center items-center p-4">
     <div class="flex flex-col gap-3 w-full max-w-[450px] border-2 p-4 shadow-lg rounded-lg">
       <img src="{{ asset('images/logo.png') }}" alt="eRent Logo" class="h-[80px] mx-auto">
       <h1 class="text-3xl text-center font-bold text-black/90 mt-8">Log In</h1>
