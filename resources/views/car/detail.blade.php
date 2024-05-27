@@ -25,7 +25,7 @@
           <div class="flex flex-col gap-1">
             <label for="return">Return Date</label>
             <input type="date" name="return" id="return" class="input w-full p-1 rounded-md focus:outline-2 focus:outline-erentGreen" required>
-            <p id="invalid-date-input" class="text-erentRed hidden">Start or Return date cannot set to yesterday or before. And return date cannot set to before start date.</p>
+            <p id="invalid-date-input" class="text-erentRed hidden">Start or return date cannot set to yesterday or before. And return date cannot set to before start date.</p>
             <input type="number" name="id" id="id" value="{{ $car['id'] }}" required class="hidden">
             <input type="text" name="name" id="name" value="{{ $car['name'] }}" required class="hidden">
             <input type="text" name="image" id="image" value="{{ $car['image'] }}" required class="hidden">
