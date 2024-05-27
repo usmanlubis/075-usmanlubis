@@ -13,6 +13,7 @@ class TransactionController extends Controller
         $activeTransaction = [];
         foreach ($transactions as $transaction) {
             if ($transaction['isActive']) {
+                $transaction->renterName;
                 $activeTransaction[] = $transaction;
             }
         }

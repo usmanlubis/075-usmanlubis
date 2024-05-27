@@ -11,4 +11,9 @@ class Transaction extends Model
     protected $fillable = [
         'carName', 'carImage', 'startDate', 'returnDate', 'totalPrice', 'isActive', 'car_id', 'renter_id'
     ];
+
+    public function renterName()
+    {
+        return $this->belongsTo(User::class, 'renter_id', 'id');
+    }
 }
