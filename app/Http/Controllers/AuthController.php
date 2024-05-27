@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
     public function loginPage()
     {
-        return view('login');
+        return view("login");
     }
 
     public function login(Request $request)
@@ -33,28 +33,28 @@ class AuthController extends Controller
         $request->session()->put("phone", $user->phone);
         $request->session()->put("role_id", $user->role_id);
 
-        return redirect()->route('homepage');
+        return redirect()->route("homepage");
     }
 
     public function signupPage()
     {
-        return view('signup');
+        return view("signup");
     }
 
     public function signup(Request $request)
     {
         $payload = $request->all();
-        $isEmailTaken = User::where("email", $payload['email'])->first();
+        $isEmailTaken = User::where("email", $payload["email"])->first();
 
         if ($isEmailTaken){
             return redirect()->back()->with("error", "Email already taken");
         }
 
         $newUser = [
-            "name" => $payload['name'],
-            "email" => $payload['email'],
-            "password" => Hash::make($payload['password']),
-            "phone" => $payload['phone'],
+            "name" => $payload["name"],
+            "email" => $payload["email"],
+            "password" => Hash::make($payload["password"]),
+            "phone" => $payload["phone"],
             "role_id" => 2
         ];
 
@@ -70,13 +70,13 @@ class AuthController extends Controller
         $request->session()->put("phone", $user->phone);
         $request->session()->put("role_id", $user->role_id);
 
-        return redirect()->route('homepage');
+        return redirect()->route("homepage");
     }
 
     public function logout(Request $request)
     {
         session()->flush();
 
-        return redirect()->route('login-page');
+        return redirect()->route("login-page");
     }
 }
