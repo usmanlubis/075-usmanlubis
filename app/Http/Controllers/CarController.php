@@ -33,7 +33,7 @@ class CarController extends Controller
         ]);
     }
 
-    public function detail(int $id)
+    public function detail(string $id)
     {
         $cars = Car::all();
         $selectedCar = null;
@@ -41,6 +41,10 @@ class CarController extends Controller
         foreach ($cars as $car) {
             if ($car["id"] == $id)
             $selectedCar = $car;
+        }
+
+        if (!$selectedCar) {
+            return view("404");
         }
 
         return view("car.detail", [
@@ -48,7 +52,7 @@ class CarController extends Controller
         ]);
     }
 
-    public function edit(int $id)
+    public function edit(string $id)
     {
         $cars = Car::all();
         $selectedCar = null;
@@ -58,12 +62,16 @@ class CarController extends Controller
             $selectedCar = $car;
         }
 
+        if (!$selectedCar) {
+            return view("404");
+        }
+
         return view("car.edit", [
             "car" => $selectedCar
         ]);
     }
 
-    public function delete(int $id)
+    public function delete(string $id)
     {
         $cars = Car::all();
         $selectedCar = null;
@@ -71,6 +79,10 @@ class CarController extends Controller
         foreach ($cars as $car) {
             if ($car["id"] == $id)
             $selectedCar = $car;
+        }
+
+        if (!$selectedCar) {
+            return view("404");
         }
 
         return view("car.delete", [
