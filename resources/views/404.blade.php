@@ -12,7 +12,7 @@
           </svg>
           <h1 class="mb-4 text-4xl font-bold">404 - Page Not Found</h1>
           <p class="mb-8 text-lg">Sorry, the page you are looking for does not exist.</p>
-          <a href="{{ route('homepage') }}" class="hover:opacity-90 hover:underline active:opacity-85">Back to home.</a>
+          <a href="{{ route('homepage') }}" class="text-semibold hover:opacity-90 hover:underline active:opacity-85">Back to home.</a>
       </div>
     </section>
   @endsection

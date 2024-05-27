@@ -38,7 +38,7 @@
             <button type="submit" class="w-full px-4 py-2 mt-4 text-white transition duration-100 ease-in-out rounded-md bg-erentGreen active:bg-erentGreen/15 hover:bg-white hover:text-erentGreen hover:outline hover:outline-erentGreen">Sign Up</button>
           </div>
           <div>
-            <p class="text-center">Already have an account? <a href="{{ route('login-page') }}" class="hover:opacity-90 hover:underline active:opacity-85">Log In</a></p>
+            <p class="text-center">Already have an account? <a href="{{ route('login-page') }}" class="text-semibold hover:opacity-90 hover:underline active:opacity-85">Log In</a></p>
           </div>
         </form>
       </div>
