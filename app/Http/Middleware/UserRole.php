@@ -15,7 +15,7 @@ class UserRole
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(session()->get("role_id") != 1){
+        if (session()->get("role_id") != 1){
             return redirect()->route("homepage");
         }
 
