@@ -1,8 +1,9 @@
 <section class="w-full max-w-[1440px] p-4">
-    <h1 class="text-center font-bold text-3xl pb-[25px]">My Transactions</h1>
     @if(session()->get('role_id') == 1 && !$transactions)
+        <h1 class="text-center font-bold text-3xl pb-[25px]">Transactions</h1>
         <p class="italic text-center">Currently no active transaction. <a href="{{ route('homepage') }}" class="!not-italic font-semibold hover:opacity-90 hover:underline active:opacity-85">Back to home.</a></p>
     @elseif(session()->get('role_id') != 1 && !$transactions)
+        <h1 class="text-center font-bold text-3xl pb-[25px]">My Transactions</h1>
         <p class="italic text-center">You don't have active transaction. <a href="{{ route('homepage') }}#rent-now" class="!not-italic hover:opacity-90 hover:underline active:opacity-85">Rent a car.</a></p>
     @else
         <div class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
