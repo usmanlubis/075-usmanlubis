@@ -39,14 +39,3 @@ Route::view('/about', 'about')->name('about')->middleware(UserIsLoggedIn::class)
 Route::view('/contact', 'contact')->name('contact')->middleware(UserIsLoggedIn::class);
 
 Route::fallback(fn() => response()->view('404'))->name('404');
-
-// Route::get('/getSession', function(){
-//     return [
-//         "isLogged" => session()->get("isLogged"),
-//         "id" => session()->get("id"),
-//         "name" => session()->get("name"),
-//         "email" => session()->get("email"),
-//         "phone" => session()->get("phone"),
-//         "role_id" => session()->get("role_id"),
-//     ];
-// });
