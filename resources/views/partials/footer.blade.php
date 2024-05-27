@@ -3,11 +3,11 @@
         <div class="flex flex-col gap-2">
             <h3 class="text-xl font-semibold">Navigations</h3>
             <ul>
-                <li><a href="/" class="hover:opacity-90 active:opacity-85">Home</a></li>
-                <li><a href="/cars" class="hover:opacity-90 active:opacity-85">Rent Car</a></li>
-                <li><a href="/transaction" class="hover:opacity-90 active:opacity-85">My Transaction</a></li>
-                <li><a href="/about" class="hover:opacity-90 active:opacity-85">About Us</a></li>
-                <li><a href="/contact" class="hover:opacity-90 active:opacity-85">Contact</a></li>
+                <li><a href="{{ route('homepage') }}" class="hover:opacity-90 active:opacity-85">Home</a></li>
+                <li><a href="{{ route('cars') }}" class="hover:opacity-90 active:opacity-85">Rent Car</a></li>
+                <li><a href="{{ route('transaction') }}" class="hover:opacity-90 active:opacity-85">My Transaction</a></li>
+                <li><a href="{{ route('about') }}" class="hover:opacity-90 active:opacity-85">About Us</a></li>
+                <li><a href="{{ route('contact') }}" class="hover:opacity-90 active:opacity-85">Contact</a></li>
             </ul>
         </div>
         <div class="flex flex-col gap-2">
@@ -51,7 +51,7 @@
         <div class="flex flex-col gap-2">
             <h3 class="text-xl font-semibold">Company Info</h3>
             <ul>
-                <li><a href="/about" class="hover:opacity-90 active:opacity-85">About Company</a></li>
+                <li><a href="{{ route('about') }}" class="hover:opacity-90 active:opacity-85">About Company</a></li>
                 <li><a href="/" class="hover:opacity-90 active:opacity-85">Careers</a></li>
                 <li><a href="/" class="hover:opacity-90 active:opacity-85">Blog</a></li>
                 <li><a href="/" class="hover:opacity-90 active:opacity-85">Press</a></li>
