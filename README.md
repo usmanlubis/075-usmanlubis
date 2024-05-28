@@ -12,8 +12,14 @@ eRent is a web-based application created for booking car rentals. It facilitates
 
 ## Installation Guide
 
-1. Clone this GitHub project.
-2. Open a terminal and navigate to the project directory.
+1. Clone this GitHub project with the command
+    ```sh
+    git clone https://github.com/usmanlubis/075-usmanlubis
+    ```
+2. Open a terminal and navigate to the project directory with the command
+    ```
+    cd 075-usmanlubis
+    ```
 3. Download Laravel dependencies with the command:
     ```sh
     composer install
@@ -22,38 +28,26 @@ eRent is a web-based application created for booking car rentals. It facilitates
     ```sh
     npm install
     ```
-5. Start MySQL as the database and create a new database named "jda" or adjust it according to the <code>.env</code> file.
+5. Start MySQL as the database and create a new database named "jda" or adjust it with <code>.env</code> file.
 6. In the terminal, enter the command:
     ```sh
     php artisan key:generate
     ```
-7. Run the database migrations with the command:
+7. Run the database migrations and seed the initial data with the command:
     ```sh
-    php artisan migrate
+    php artisan migrate --seed
     ```
-8. Seed the database for roles with the command:
-    ```sh
-    php artisan db:seed RoleSeeder
-    ```
-9. Seed the database for users with the command:
-    ```sh
-    php artisan db:seed UserSeeder
-    ```
-10. Optionally, seed the database for cars with the command:
-    ```sh
-    php artisan db:seed CarSeeder
-    ```
-11. Run Node for Tailwind with the command:
+8. Run Node for Tailwind with the command:
     ```sh
     npm run dev
     ```
     Keep this terminal open, and open a new terminal.
-12. Start the Laravel project directly with Laragon or another application, or through the new terminal with the command:
+9. Start the Laravel project directly with Laragon or another application, or through the new terminal with the command:
     ```sh
     php artisan serve
     ```
     Click the link that appears to be directed to your web browser.
-13. You can log in with two schemes, as an admin or as a regular user:
+10. You can log in with two schemes, as an admin or as a regular user:
     - As an admin, log in with the following credentials:
       - Email: `admin@erent.com`
       - Password: admin
@@ -65,5 +59,5 @@ eRent is a web-based application created for booking car rentals. It facilitates
           - Email: `joni@gmail.com`
           - Password: joni
     - You can also register a new account by signing up.
-14. You are now logged into the eRent application. To switch accounts, you can log out using the navbar in the top right corner.
-15. To add a new car data, you can use this [dummyData.txt](dummyData.txt).
+11. You are now logged into the eRent application. To switch accounts, you can log out using the navbar in the top right corner.
+12. To add a new car data, you can use this [dummyData.txt](dummyData.txt).
