@@ -7,7 +7,7 @@
         </div>
         <div class="flex justify-between gap-6">
             <nav class="hidden md:block">
-                <ul class="flex justify-end gap-3 text-lg">
+                <ul class="flex justify-end gap-6 text-lg">
                     <li><a href="{{ route('homepage') }}" class="{{ request()->is('/') ? 'opacity-90' : '' }} hover:opacity-90 active:opacity-85">Home</a></li>
                     @if(session()->get('role_id') == 1)
                         <li><a href="{{ route('add') }}" class="{{ request()->is('/add') ? 'opacity-90' : '' }} hover:opacity-90 active:opacity-85">Add Car</a></li>
